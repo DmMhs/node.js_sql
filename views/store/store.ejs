@@ -1,0 +1,24 @@
+<%- include('../includes/top-section.ejs') %>
+<main>
+    <% if (prods.length > 0) { %>
+        <div class="grid">
+            <% for (let book of prods) { %>
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%= book.name %></h1>
+                    </header>
+
+                    <div class="card__content">
+                        <p class="product__year">Year: <%= book.year %></p>
+                        <p class="product__price">Author: <%= book.authorName %></p>
+                        <p class="product__description">Short Description: <%= book.description %></p>
+                    </div>
+                    
+                </article>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>No Products Found!</h1>
+    <% } %>
+</main>
+<%- include('../includes/bottom-section.ejs') %>
